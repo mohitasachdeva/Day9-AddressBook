@@ -1,32 +1,28 @@
 package com.brigelap;
-import java.io.*;
 import java.util.Scanner;
 public class AddressBook {
-    private static Scanner scanner = new Scanner(System.in);
+    Contacts contact = new Contacts();
+    Scanner scr = new Scanner(System.in);
 
-    public static void main(String[] args) {
-        System.out.println(" Welcome to the Address Book Programme");
-        Contacts contact = addContact();
-        System.out.println(contact);
-        //Contacts editedContact = editContact(contact);
-        //System.out.println(editedContact);
+    void addContact() {
+        System.out.println("Enter first name");
+        contact.setFirstName(scr.next());
+        System.out.println("Enter last name");
+        contact.setLastName(scr.next());
+        System.out.println("Enter city");
+        contact.setCity(scr.next());
+        System.out.println("Enter state");
+        contact.setState(scr.next());
+        System.out.print("Enter address:  ");
+        scr.nextLine();
+        contact.setAddress(scr.nextLine());
+        System.out.println("Enter Zipcode");
+        contact.setZip(scr.nextInt());
+        System.out.println("Enter phone Number");
+        contact.setPhoneNumber(scr.nextInt());
+        System.out.println("Enter email address");
+        contact.setEmail(scr.next());
     }
 
-    private static Contacts addContact() {
-        Contacts contact = new Contacts();
-        System.out.println("Enter first name:");
-        contact.setFirstName(scanner.next());
-        System.out.println("Enter last name:");
-        contact.setLastName(scanner.next());
-        System.out.println("Enter address:");
-        contact.setAddress(scanner.next());
-        return contact;
-    }
-
-   // private static Contacts editContact(Contacts contact) {
-     //   System.out.println("Edit first name");
-       // contact.setFirstName(scanner.next());
-        //return contact;
-    }
-
+}
 
